@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Warm travertine cream background so dark tiles pop in Dark Mode tabs -->
+  <rect width="32" height="32" rx="6" fill="#F6F3EC" />
+  <!-- Top-Left: Nero Marquina -->
+  <rect x="4" y="4" width="10.5" height="10.5" rx="1.5" fill="#1E1E1C" />
+  <!-- Top-Right: Tilted Terracotta (6 deg) -->
+  <rect x="17.5" y="4" width="10.5" height="10.5" rx="1.5" fill="#B85D3B" transform="rotate(6 22.75 9.25)" />
+  <!-- Bottom-Left: Slate Gray -->
+  <rect x="4" y="17.5" width="10.5" height="10.5" rx="1.5" fill="#5A5852" />
+  <!-- Bottom-Right: Nero Marquina -->
+  <rect x="17.5" y="17.5" width="10.5" height="10.5" rx="1.5" fill="#1E1E1C" />
+</svg>
