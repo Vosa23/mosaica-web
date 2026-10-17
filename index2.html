@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOSAICA | Pravá kamenná mozaika – DIY sady, vlastní návrhy a workshopy</title>
+    <meta name="description" content="Objevte kouzlo antické kamenné mozaiky. Kreativní DIY sady z pravého mramoru a travertinu, mozaiky z vlastní fotografie a zážitkové workshopy v ČR.">
+    <meta name="keywords" content="kamenná mozaika, římská mozaika, DIY mozaika sada, kreativní sada, mozaika z fotky, mramorová mozaika, kreativní workshopy, mosaica">
+    <link rel="canonical" href="https://mosaica.cz/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="MOSAICA | Řemeslo kamenné mozaiky u vás doma">
+    <meta property="og:description" content="Kreativní sady z pravého mramoru, mozaiky podle vlastní fotky a živé workshopy. Spouštíme brzy.">
+    <meta property="og:url" content="https://mosaica.cz/">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CraftStore",
+      "name": "Mosaica.cz",
+      "url": "https://mosaica.cz",
+      "description": "Kreativní DIY sady na tvorbu pravé kamenné mozaiky, zakázkové mozaiky z fotografií a řemeslné workshopy.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CZ"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-cream: #F6F3EC;
+            --bg-card: #EFECE4;
+            --stone-dark: #1E1E1C;
+            --stone-slate: #5A5852;
+            --terracotta: #B85D3B;
+            --terracotta-dark: #964729;
+            --travertine: #D8CBB8;
+            --border-line: #DFD8CA;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--stone-dark);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .top-border {
+            height: 6px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--stone-dark) 0px,
+                var(--stone-dark) 12px,
+                var(--travertine) 12px,
+                var(--travertine) 24px,
+                var(--terracotta) 24px,
+                var(--terracotta) 36px
+            );
+        }
+
+        header {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--stone-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-tiles {
+            display: grid;
+            grid-template-columns: repeat(2, 10px);
+            gap: 2px;
+        }
+
+        .logo-tiles span {
+            width: 10px;
+            height: 10px;
+            background: var(--stone-dark);
+            display: block;
+            border-radius: 1px;
+        }
+
+        .logo-tiles span:nth-child(2) { background: var(--terracotta); transform: rotate(6deg); }
+        .logo-tiles span:nth-child(3) { background: var(--stone-slate); }
+
+        .lang-switch {
+            background: transparent;
+            border: 1px solid var(--stone-dark);
+            padding: 0.4rem 0.8rem;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch:hover {
+            background: var(--stone-dark);
+            color: var(--bg-cream);
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 2rem 0 4rem;
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--travertine);
+            color: var(--terracotta-dark);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 0.35rem 0.85rem;
+            border-radius: 2px;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.18;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .lead {
+            font-size: 1.12rem;
+            color: var(--stone-slate);
+            margin-bottom: 2rem;
+            max-width: 560px;
+        }
+
+        .mosaic-preview-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-line);
+            padding: 1.75rem;
+            border-radius: 6px;
+            box-shadow: 0 12px 30px -10px rgba(30, 30, 28, 0.08);
+            text-align: center;
+        }
+
+        .mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 4px;
+            background: #3A3834;
+            padding: 10px;
+            border-radius: 4px;
+            aspect-ratio: 1 / 1;
+            max-width: 320px;
+            margin: 0 auto 1rem;
+        }
+
+        .tessera {
+            border-radius: 1.5px;
+            transition: transform 0.2s ease, background-color 0.25s ease;
+            cursor: pointer;
+            box-shadow: inset 1px 1px 0px rgba(255,255,255,0.25), inset -1px -1px 0px rgba(0,0,0,0.2);
+        }
+
+        .tessera:hover {
+            transform: scale(0.92) rotate(3deg);
+        }
+
+        .caption {
+            font-size: 0.8rem;
+            color: var(--stone-slate);
+        }
+
+        .pillars-header {
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .pillars-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-line);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-num {
+            font-family: 'Cinzel', serif;
+            color: var(--terracotta);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--stone-slate);
+            font-size: 0.95rem;
+        }
+
+        .cta-box {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .cta-input {
+            flex: 1;
+            min-width: 240px;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--stone-slate);
+            background: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            border-radius: 3px;
+        }
+
+        .cta-btn {
+            background: var(--terracotta);
+            color: #fff;
+            border: none;
+            padding: 0.85rem 1.6rem;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.2s, opacity 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--terracotta-dark);
+        }
+
+        .cta-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        footer {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border-line);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--stone-slate);
+        }
+
+        [data-lang="en"] { display: none; }
+        body.en [data-lang="cs"] { display: none; }
+        body.en [data-lang="en"] { display: block; }
+        body.en span[data-lang="en"] { display: inline-block; }
+
+        @media (max-width: 820px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-border"></div>
+
+    <header>
+        <a href="/" class="logo">
+            <div class="logo-tiles">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            MOSAICA
+        </a>
+        <button class="lang-switch" onclick="toggleLang()" id="langBtn">EN / CZ</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <span class="badge" data-lang="cs">Připravujeme v ČR • Spuštění brzy</span>
+                <span class="badge" data-lang="en">Crafted in Czechia • Launching Soon</span>
+
+                <h1 data-lang="cs">Antické řemeslo v moderní podobě. Kámen po kameni.</h1>
+                <h1 data-lang="en">Ancient Craft Reimagined. Stone by Stone.</h1>
+
+                <p class="lead" data-lang="cs">
+                    Spojujeme přírodní mramor, travertin a moderní design. Vytvořte si doma trvalou kamennou mozaiku z připravené DIY sady, přetvořte vlastní fotografii do kamene nebo přijďte tvořit na živý workshop.
+                </p>
+                <p class="lead" data-lang="en">
+                    Bridging authentic natural marble, travertine, and modern design. Build a lasting stone mosaic at home with our all-in-one DIY kits, transform your own photo into stone, or join a hands-on workshop.
+                </p>
+
+                <!-- Headless Google Forms -> Google Sheets Waitlist -->
+                <form class="cta-box" onsubmit="return submitToGoogleSheet(event)">
+                    <input type="email" name="email" class="cta-input" placeholder="Váš e-mail pro info o spuštění..." required id="emailInput">
+                    <button type="submit" class="cta-btn" id="submitBtn">
+                        <span data-lang="cs">Dejte mi vědět</span>
+                        <span data-lang="en">Notify Me</span>
+                    </button>
+                </form>
+                <p id="formMsg" style="font-size: 0.88rem; margin-top: 0.65rem; font-weight: 500;"></p>
+            </div>
+
+            <div class="mosaic-preview-card">
+                <div class="mosaic-grid" id="mosaicGrid" aria-label="Interactive Roman Mosaic Pattern"></div>
+                <p class="caption" data-lang="cs">Klikněte na kameny (tesserae) pro změnu odstínu mramoru</p>
+                <p class="caption" data-lang="en">Click the stone tesserae to cycle natural marble tones</p>
+            </div>
+        </section>
+
+        <div class="pillars-header">
+            <h2 data-lang="cs">Na čem právě pracujeme</h2>
+            <h2 data-lang="en">What We Are Building</h2>
+        </div>
+
+        <section class="pillars">
+            <article class="card">
+                <span class="card-num">I. OPUS TESSELLATUM</span>
+                <h3 data-lang="cs">Kreativní DIY sady</h3>
+                <h3 data-lang="en">All-in-One DIY Kits</h3>
+                <p data-lang="cs">
+                    Kompletní krabice pro večerní digitální detox. Obsahuje pravé přírodní kameny (mramor, travertin, břidlice), dřevěný rám, kleště na štípání kamene, spárovací hmotu a podrobnou šablonu.
+                </p>
+                <p data-lang="en">
+                    A complete tactile box for an offline evening. Includes genuine natural stone tesserae (marble, travertine, slate), a laser-cut wooden frame, nippers, mortar, and a 1:1 blueprint.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-num">II. OPUS VERMICULATUM</span>
+                <h3 data-lang="cs">Mozaika z vlastní fotky</h3>
+                <h3 data-lang="en">Custom Photo & Design Kits</h3>
+                <p data-lang="cs">
+                    Náš algoritmus převede portrét, domácího mazlíčka nebo váš vlastní nákres do přesného mozaikového plánu s naváženými sáčky přírodního kamene v odpovídajících odstínech.
+                </p>
+                <p data-lang="en">
+                    Turn a cherished portrait, pet photo, or custom sketch into an authentic stone mosaic. Our custom design tool generates your exact stone blueprint and pre-weighed marble palette.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="card-num">III. SCHOLA ARTIS</span>
+                <h3 data-lang="cs">Živé workshopy a kurzy</h3>
+                <h3 data-lang="en">Hands-On Workshops</h3>
+                <p data-lang="cs">
+                    Tříhodinové zážitkové večery u kávy či vína. Vyzkoušíte si štípání mramoru, skládání antických linií (andamento) a odnesete si hotové kamenné dílo. Ideální i pro teambuilding.
+                </p>
+                <p data-lang="en">
+                    Three-hour tactile evenings over coffee or wine. Learn stone nipping, classical Roman flow lines (andamento), and craft your own 20×20 cm stone piece.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div>© 2026 MOSAICA.CZ — <span data-lang="cs">Všechna práva vyhrazena.</span><span data-lang="en">All rights reserved.</span></div>
+        <div>Kontakt: <a href="mailto:info@mosaica.cz" style="color: inherit;">info@mosaica.cz</a></div>
+    </footer>
+
+    <script>
+        // Natural stone palette: Carrara White, Travertine Beige, Nero Marquina, Rosso Verona, Ligurian Slate
+        const palette = ['#EDEAE2', '#D5C5AE', '#262523', '#B85D3B', '#7A7872'];
+        const pattern = [
+            2,2,2,2,2,2,2,2,2,
+            2,0,0,0,0,0,0,0,2,
+            2,0,3,3,1,3,3,0,2,
+            2,0,3,1,1,1,3,0,2,
+            2,0,1,1,2,1,1,0,2,
+            2,0,3,1,1,1,3,0,2,
+            2,0,3,3,1,3,3,0,2,
+            2,0,0,0,0,0,0,0,2,
+            2,2,2,2,2,2,2,2,2
+        ];
+
+        const grid = document.getElementById('mosaicGrid');
+        pattern.forEach((colorIndex) => {
+            const tile = document.createElement('div');
+            tile.className = 'tessera';
+            tile.dataset.idx = colorIndex;
+            tile.style.backgroundColor = palette[colorIndex];
+            const rot = (Math.random() * 2.4 - 1.2).toFixed(1);
+            tile.style.transform = `rotate(${rot}deg)`;
+
+            tile.addEventListener('click', () => {
+                let next = (parseInt(tile.dataset.idx) + 1) % palette.length;
+                tile.dataset.idx = next;
+                tile.style.backgroundColor = palette[next];
+            });
+            grid.appendChild(tile);
+        });
+
+        function toggleLang() {
+            document.body.classList.toggle('en');
+            const isEn = document.body.classList.contains('en');
+            document.getElementById('emailInput').placeholder = isEn 
+                ? 'Your email for launch updates...' 
+                : 'Váš e-mail pro info o spuštění...';
+        }
+
+        // =========================================================================
+        // GOOGLE FORMS -> GOOGLE SHEETS CONFIG
+        // Paste your Form ID and Entry ID(s) from your pre-filled link below:
+        // =========================================================================
+        const GOOGLE_FORM_ID = "1FAIpQLScc0FV34Cb5OpMkfOXsVjXJmy1Jo_j4saN6Mm94hgqQT5uIPQ"; 
+        const EMAIL_ENTRY_ID = "entry.1567906928";
+        const LANG_ENTRY_ID  = ""; // Optional: e.g. "entry.222222222" if you added a Language field
+
+        async function submitToGoogleSheet(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('emailInput');
+            const submitBtn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMsg');
+            const isEn = document.body.classList.contains('en');
+            const email = emailInput.value.trim();
+
+            if (!email) return false;
+ 
+            submitBtn.disabled = true;
+            const formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
+            const formData = new FormData();
+            formData.append(EMAIL_ENTRY_ID, email);
+            if (LANG_ENTRY_ID) {
+                formData.append(LANG_ENTRY_ID, isEn ? "EN" : "CZ");
+            }
+
+            try {
+                await fetch(formUrl, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: formData
+                });
+
+                emailInput.value = "";
+                msg.style.color = "#2E6F40";
+                msg.textContent = isEn 
+                    ? "Thank you! We will notify you as soon as we launch." 
+                    : "Děkujeme! Dáme vám vědět, jakmile web spustíme.";
+            } catch (error) {
+                msg.style.color = "#B85D3B";
+                msg.textContent = isEn 
+                    ? "Could not save email. Please write to info@mosaica.cz" 
+                    : "Nepodařilo se uložit e-mail. Napište nám prosím na info@mosaica.cz";
+            } finally {
+                submitBtn.disabled = false;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
