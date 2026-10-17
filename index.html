@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOSAICA | Pravá kamenná mozaika – DIY sady, vlastní návrhy a workshopy</title>
-    <meta name="description" content="Objevte kouzlo antické kamenné mozaiky. Kreativní DIY sady z pravého mramoru a travertinu, mozaiky z vlastní fotky a zážitkové workshopy v ČR.">
+    <meta name="description" content="Objevte kouzlo antické kamenné mozaiky. Kreativní DIY sady z pravého mramoru a travertinu, mozaiky z vlastní fotografie a zážitkové workshopy v ČR.">
     <meta name="keywords" content="kamenná mozaika, římská mozaika, DIY mozaika sada, kreativní sada, mozaika z fotky, mramorová mozaika, kreativní workshopy, mosaica">
     <link rel="canonical" href="https://mosaica.cz/">
 
@@ -26,7 +26,7 @@
       "@type": "CraftStore",
       "name": "Mosaica.cz",
       "url": "https://mosaica.cz",
-      "description": "Kreativní DIY sady na tvorbu pravé kamenné mozaiky, zakázkové mozaiky z fotek a řemeslné workshopy.",
+      "description": "Kreativní DIY sady na tvorbu pravé kamenné mozaiky, zakázkové mozaiky z fotografií a řemeslné workshopy.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "CZ"
@@ -60,7 +60,6 @@
             overflow-x: hidden;
         }
 
-        /* Subtle Roman meander top bar */
         .top-border {
             height: 6px;
             background: repeating-linear-gradient(
@@ -173,7 +172,6 @@
             max-width: 560px;
         }
 
-        /* Interactive Stone Mosaic Widget */
         .mosaic-preview-card {
             background: var(--bg-card);
             border: 1px solid var(--border-line);
@@ -187,7 +185,7 @@
             display: grid;
             grid-template-columns: repeat(9, 1fr);
             gap: 4px;
-            background: #3A3834; /* Dark anthracite mortar */
+            background: #3A3834;
             padding: 10px;
             border-radius: 4px;
             aspect-ratio: 1 / 1;
@@ -211,7 +209,6 @@
             color: var(--stone-slate);
         }
 
-        /* Pillars Section */
         .pillars-header {
             margin-top: 4rem;
             margin-bottom: 2rem;
@@ -261,7 +258,6 @@
             font-size: 0.95rem;
         }
 
-        /* Newsletter / Contact Box */
         .cta-box {
             margin-top: 2rem;
             display: flex;
@@ -290,13 +286,16 @@
             font-size: 0.95rem;
             border-radius: 3px;
             cursor: pointer;
-            transition: background 0.2s;
-            text-decoration: none;
-            display: inline-block;
+            transition: background 0.2s, opacity 0.2s;
         }
 
         .cta-btn:hover {
             background: var(--terracotta-dark);
+        }
+
+        .cta-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         footer {
@@ -342,28 +341,28 @@
     <main>
         <section class="hero">
             <div>
-                <span class="badge" data-lang="cs">Připravujeme v ČR • Spuštění 2027</span>
+                <span class="badge" data-lang="cs">Připravujeme v ČR • Spuštění brzy</span>
                 <span class="badge" data-lang="en">Crafted in Czechia • Launching Soon</span>
 
                 <h1 data-lang="cs">Antické řemeslo v moderní podobě. Kámen po kameni.</h1>
                 <h1 data-lang="en">Ancient Craft Reimagined. Stone by Stone.</h1>
 
                 <p class="lead" data-lang="cs">
-                    Spojujeme přírodní mramor, travertin a moderní design. Vytvořte si doma trvalou kamennou mozaiku z připravené DIY sady, přetvořte vlastní fotku do kamene nebo přijďte tvořit na živý workshop.
+                    Spojujeme přírodní mramor, travertin a moderní design. Vytvořte si doma trvalou kamennou mozaiku z připravené DIY sady, přetvořte vlastní fotografii do kamene nebo přijďte tvořit na živý workshop.
                 </p>
                 <p class="lead" data-lang="en">
                     Bridging authentic natural marble, travertine, and modern design. Build a lasting stone mosaic at home with our all-in-one DIY kits, transform your own photo into stone, or join a hands-on workshop.
                 </p>
 
-                <!-- Formspree or mailto fallback -->
-                <form class="cta-box" action="https://formspree.io/f/xdeayrqq" method="POST" onsubmit="return handleForm(event)">
+                <!-- Headless Google Forms -> Google Sheets Waitlist -->
+                <form class="cta-box" onsubmit="return submitToGoogleSheet(event)">
                     <input type="email" name="email" class="cta-input" placeholder="Váš e-mail pro info o spuštění..." required id="emailInput">
-                    <button type="submit" class="cta-btn">
+                    <button type="submit" class="cta-btn" id="submitBtn">
                         <span data-lang="cs">Dejte mi vědět</span>
                         <span data-lang="en">Notify Me</span>
                     </button>
                 </form>
-                <p id="formMsg" style="font-size: 0.85rem; margin-top: 0.6rem; color: var(--terracotta-dark);"></p>
+                <p id="formMsg" style="font-size: 0.88rem; margin-top: 0.65rem; font-weight: 500;"></p>
             </div>
 
             <div class="mosaic-preview-card">
@@ -384,10 +383,10 @@
                 <h3 data-lang="cs">Kreativní DIY sady</h3>
                 <h3 data-lang="en">All-in-One DIY Kits</h3>
                 <p data-lang="cs">
-                    Kompletní krabice pro večerní digitální detox. Obsahuje pravé přírodní kameny (mramor, travertin, břidlice), dřevěný rám, klеště na štípání kamene, spárovací hmotu a podrobnou šablonu.
+                    Kompletní krabice pro večerní digitální detox. Obsahuje pravé přírodní kameny (mramor, travertin), dřevěný rám, kleště na štípání kamene, spárovací hmotu a podrobnou 1:1 dřevěnou šablonu.
                 </p>
                 <p data-lang="en">
-                    A complete tactile box for an offline evening. Includes genuine natural stone tesserae (marble, travertine, slate), a laser-cut wooden frame, nippers, mortar, and a 1:1 blueprint.
+                    A complete tactile box for an offline evening. Includes genuine natural stone tesserae (marble, travertine), a laser-cut wooden frame, nippers, mortar, and a 1:1 wooden blueprint.
                 </p>
             </article>
 
@@ -425,7 +424,6 @@
     <script>
         // Natural stone palette: Carrara White, Travertine Beige, Nero Marquina, Rosso Verona, Ligurian Slate
         const palette = ['#EDEAE2', '#D5C5AE', '#262523', '#B85D3B', '#7A7872'];
-        // Simple classical emblem pattern (9x9)
         const pattern = [
             2,2,2,2,2,2,2,2,2,
             2,0,0,0,0,0,0,0,2,
@@ -444,7 +442,6 @@
             tile.className = 'tessera';
             tile.dataset.idx = colorIndex;
             tile.style.backgroundColor = palette[colorIndex];
-            // Slight organic rotation like real hand-laid stone
             const rot = (Math.random() * 2.4 - 1.2).toFixed(1);
             tile.style.transform = `rotate(${rot}deg)`;
 
@@ -464,15 +461,52 @@
                 : 'Váš e-mail pro info o spuštění...';
         }
 
-        function handleForm(e) {
-            const action = e.target.action;
-            if (action.includes('xdeayrqq')) {
-                e.preventDefault();
-                const email = document.getElementById('emailInput').value;
-                window.location.href = `mailto:info@mosaica.cz?subject=Zájem o Mosaica.cz&body=Prosím o info až spustíte web. Můj e-mail: ${email}`;
-                return false;
+        // =========================================================================
+        // GOOGLE FORMS -> GOOGLE SHEETS CONFIG
+        // =========================================================================
+        const GOOGLE_FORM_ID = "1FAIpQLScc0FV34Cb5OpMkfOXsVjXJmy1Jo_j4saN6Mm94hgqQT5uIPQ"; 
+        const EMAIL_ENTRY_ID = "entry.1567906928";
+        const LANG_ENTRY_ID  = "";
+
+        async function submitToGoogleSheet(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('emailInput');
+            const submitBtn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMsg');
+            const isEn = document.body.classList.contains('en');
+            const email = emailInput.value.trim();
+
+            if (!email) return false;
+ 
+            submitBtn.disabled = true;
+            const formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
+            const formData = new FormData();
+            formData.append(EMAIL_ENTRY_ID, email);
+            if (LANG_ENTRY_ID) {
+                formData.append(LANG_ENTRY_ID, isEn ? "EN" : "CZ");
             }
-            return true;
+
+            try {
+                await fetch(formUrl, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: formData
+                });
+
+                emailInput.value = "";
+                msg.style.color = "#2E6F40";
+                msg.textContent = isEn 
+                    ? "Thank you! We will notify you as soon as we launch." 
+                    : "Děkujeme! Dáme vám vědět, jakmile vše spustíme.";
+            } catch (error) {
+                msg.style.color = "#B85D3B";
+                msg.textContent = isEn 
+                    ? "Could not save email. Please write to info@mosaica.cz" 
+                    : "Nepodařilo se uložit e-mail. Napište nám prosím na info@mosaica.cz";
+            } finally {
+                submitBtn.disabled = false;
+            }
+            return false;
         }
     </script>
 </body>
