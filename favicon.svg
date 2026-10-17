@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Warm travertine cream background so dark tiles pop in Dark Mode tabs -->
-  <rect width="32" height="32" rx="6" fill="#F6F3EC" />
-  <!-- Top-Left: Nero Marquina -->
-  <rect x="4" y="4" width="10.5" height="10.5" rx="1.5" fill="#1E1E1C" />
-  <!-- Top-Right: Tilted Terracotta (6 deg) -->
-  <rect x="17.5" y="4" width="10.5" height="10.5" rx="1.5" fill="#B85D3B" transform="rotate(6 22.75 9.25)" />
-  <!-- Bottom-Left: Slate Gray -->
-  <rect x="4" y="17.5" width="10.5" height="10.5" rx="1.5" fill="#5A5852" />
-  <!-- Bottom-Right: Nero Marquina -->
-  <rect x="17.5" y="17.5" width="10.5" height="10.5" rx="1.5" fill="#1E1E1C" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
+  <!-- Optional warm background (3px padding around the 22x22 tile grid) -->
+  <rect width="28" height="28" rx="4" fill="#F6F3EC" />
+  <!-- Top-Left: 10x10 tile, rx=1 -->
+  <rect x="3" y="3" width="10" height="10" rx="1" fill="#1E1E1C" />
+  <!-- Top-Right: 10x10 tile, 2px gap (x=15), rx=1, rotated 6 deg around its center (20, 8) -->
+  <rect x="15" y="3" width="10" height="10" rx="1" fill="#B85D3B" transform="rotate(6 20 8)" />
+  <!-- Bottom-Left: 10x10 tile, 2px gap (y=15), rx=1 -->
+  <rect x="3" y="15" width="10" height="10" rx="1" fill="#5A5852" />
+  <!-- Bottom-Right: 10x10 tile, 2px gap (x=15, y=15), rx=1 -->
+  <rect x="15" y="15" width="10" height="10" rx="1" fill="#1E1E1C" />
 </svg>
